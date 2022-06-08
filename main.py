@@ -18,6 +18,7 @@ def isSimiliary(pic1, pic2, threshold):
 
 
 if __name__ == '__main__':
+    // change the save path when you run this code.
     save_dir = './pic/'
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -27,6 +28,8 @@ if __name__ == '__main__':
     last_picture = ImageGrab.grab(all_screens=False)
     while(True):
         pic = ImageGrab.grab(all_screens=False)
+        
+        // change the threshold of SSIM when you run this code.
         if not isSimiliary(last_picture, pic, 0.93):
             count += 1
             print('save the {}th picture.'.format(count))
